@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+
+        <style type="text/css">
+            body
+            {
+                font-family: Helvetica, Arial, Tahoma;
+                font-size:1em;
+            }
+            .table
+            {
+                border:solid 1px grey;
+            }
+            .header
+            {
+                background-color: gray;
+            }
+        </style>
+
+    </h:head>
+    <h:body>
+
+        <h:form id="form">
+            <h:messages errorStyle="color:red" />
+            Name
+            <p>#{welcome.welcomeMessage}</p>
+
+            <p>This is a data table
+                <p:dataList value="#{welcome.data}" var="n" itemType="circle">
+                    #{n.name}
+                    <p:commandLink title="Edit" value="Edit" action="index" ajax="false" oncomplete="nameDialog.show()">
+                        <f:setPropertyActionListener target="#{welcome.selectedId}" value="#{n.id}"/>
+                    </p:commandLink>
+                </p:dataList>
+                <br/>
+            </p>
+        </h:form>
+        
+        <p>#{welcome.selectedId}</p>
+
+        <p:dialog header="Edit Name" widgetVar="nameDialog" modal="true">
+            <p:outputPanel id="nameEdit" layout="block">
+                Name:<p:inputText value="#{welcome.selectedId}"></p:inputText>
+                <p:button value="Submit"/>
+            </p:outputPanel>
+        </p:dialog>
+    </h:body>
+</html>
+

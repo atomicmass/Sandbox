@@ -107,7 +107,7 @@
                             <goal>deploy</goal>
                         </goals>
                         <configuration>
-                                 <hostname>127.0.0.1</hostname>
+                                 <hostname>localhost</hostname>
                                  <port>9998</port>
                                  <username>jboss</username>
                                  <password>p0rsch_19</password>

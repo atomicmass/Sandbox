@@ -106,6 +106,10 @@
                         <goals>
                             <goal>deploy</goal>
                         </goals>
+                        <configuration>
+                                 <hostname>127.0.0.1</hostname>
+                                 <port>9998</port>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

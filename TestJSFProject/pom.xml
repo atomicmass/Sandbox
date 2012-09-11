@@ -109,8 +109,6 @@
                         <configuration>
                                  <hostname>localhost</hostname>
                                  <port>9998</port>
-                                 <username>jboss</username>
-                                 <password>p0rsch_19</password>
                         </configuration>
                     </execution>
                 </executions>
